@@ -14,6 +14,12 @@ This is not SolidStart and it does not render HTML on a server. The checked-in `
 - `npm run check` — typecheck plus production bundle
 - `npm run test:smoke` — build, self-start a production preview, and verify root, deep-link fallback, and local JSON
 
+### Hammer built-in npm compatibility
+
+The checked-in lockfile is emitted with npm 10.9.2 so Hammer's built-in npm can install it directly. Newer npm 11 releases add `libc` selector metadata that is not part of Hammer's currently modeled lockfile surface; the npm 10 lock preserves the same package versions, registry URLs, integrity hashes, and dependency graph without those fields.
+
+The optional Rolldown WASI binding and `NAPI_RS_ENFORCE_VERSION_CHECK` environment setting let the same Vite commands run through Hammer's WJS runtime as well as a conventional Node.js installation. Keep the committed lockfile when importing the fixture.
+
 ## Test surfaces
 
 | Route | Behavior under test |
