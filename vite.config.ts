@@ -1,5 +1,8 @@
+import { createRequire } from "node:module";
 import { defineConfig } from "vite";
-import solid from "vite-plugin-solid";
+
+const require = createRequire(import.meta.url);
+const solid = require("vite-plugin-solid") as typeof import("vite-plugin-solid").default;
 
 export default defineConfig({
   plugins: [solid()],

@@ -18,7 +18,7 @@ This is not SolidStart and it does not render HTML on a server. The checked-in `
 
 The checked-in lockfile is emitted with npm 10.9.2 so Hammer's built-in npm can install it directly. Newer npm 11 releases add `libc` selector metadata that is not part of Hammer's currently modeled lockfile surface; the npm 10 lock preserves the same package versions, registry URLs, integrity hashes, and dependency graph without those fields.
 
-The optional Rolldown WASI binding and `NAPI_RS_ENFORCE_VERSION_CHECK` environment setting let the same Vite commands run through Hammer's WJS runtime as well as a conventional Node.js installation. Vite uses its runner config loader so development startup does not bundle `vite.config.ts` through a Rolldown binding callback before the server is ready. Keep the committed lockfile when importing the fixture.
+The optional Rolldown WASI binding and `NAPI_RS_ENFORCE_VERSION_CHECK` environment setting let the same Vite commands run through Hammer's WJS runtime as well as a conventional Node.js installation. Vite uses its runner config loader so development startup does not bundle `vite.config.ts` through a Rolldown binding callback before the server is ready. The config loads `vite-plugin-solid` through its CommonJS entry so Solid Refresh receives Babel's complete generated helper surface under WJS while retaining HMR. Type checks use Hammer's `wjs check`/tsgo-WASM path under WJS and TypeScript's platform compiler under conventional Node.js. Keep the committed lockfile when importing the fixture.
 
 ## Test surfaces
 
