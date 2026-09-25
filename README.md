@@ -12,7 +12,7 @@ This is not SolidStart and it does not render HTML on a server. The checked-in `
 - `npm run build` — strict TypeScript check and production bundle
 - `npm run preview` — production preview on `0.0.0.0`
 - `npm run check` — typecheck plus production bundle
-- `npm run test:smoke` — self-start a production preview and verify root, deep-link fallback, and local JSON
+- `npm run test:smoke` — build, self-start a production preview, and verify root, deep-link fallback, and local JSON
 
 ## Test surfaces
 
