@@ -9,7 +9,17 @@ const viteEntry = new URL("../node_modules/vite/bin/vite.js", import.meta.url);
 
 const server = spawn(
   process.execPath,
-  [viteEntry.pathname, "preview", "--host", host, "--port", String(port), "--strictPort"],
+  [
+    viteEntry.pathname,
+    "preview",
+    "--configLoader",
+    "runner",
+    "--host",
+    host,
+    "--port",
+    String(port),
+    "--strictPort",
+  ],
   { stdio: ["ignore", "pipe", "pipe"] },
 );
 
