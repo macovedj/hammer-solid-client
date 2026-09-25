@@ -1,0 +1,20 @@
+[
+  {
+    "id": "anvil",
+    "name": "Pocket Anvil",
+    "description": "A tiny local-data payload for testing client fetches and dynamic routes.",
+    "price": 24
+  },
+  {
+    "id": "mallet",
+    "name": "Render Mallet",
+    "description": "Useful for tapping a reactive graph without waking an application server.",
+    "price": 39
+  },
+  {
+    "id": "tongs",
+    "name": "Async Tongs",
+    "description": "Keeps resource states safely separated while a browser fetch is in flight.",
+    "price": 18
+  }
+]
