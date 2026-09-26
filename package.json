@@ -7,9 +7,9 @@
     "node": ">=20.19.0"
   },
   "scripts": {
-    "dev": "cross-env NAPI_RS_ENFORCE_VERSION_CHECK=1 vite --configLoader runner --host 0.0.0.0",
-    "build": "npm run typecheck && cross-env NAPI_RS_ENFORCE_VERSION_CHECK=1 vite build --configLoader runner",
-    "preview": "cross-env NAPI_RS_ENFORCE_VERSION_CHECK=1 vite preview --configLoader runner --host 0.0.0.0",
+    "dev": "cross-env NAPI_RS_ENFORCE_VERSION_CHECK=1 vite --configLoader native --host 0.0.0.0",
+    "build": "npm run typecheck && cross-env NAPI_RS_ENFORCE_VERSION_CHECK=1 vite build --configLoader native",
+    "preview": "cross-env NAPI_RS_ENFORCE_VERSION_CHECK=1 vite preview --configLoader native --host 0.0.0.0",
     "typecheck": "node scripts/typecheck.mjs",
     "check": "npm run build",
     "test:smoke": "npm run build && cross-env NAPI_RS_ENFORCE_VERSION_CHECK=1 node scripts/smoke.mjs"
@@ -22,9 +22,9 @@
     "@rolldown/binding-wasm32-wasi": "1.2.11"
   },
   "devDependencies": {
-    "@types/node": "24.13.6",
     "cross-env": "10.1.0",
     "rolldown": "1.2.11",
+    "solid-refresh": "0.6.3",
     "typescript": "7.0.2",
     "vite": "8.3.1",
     "vite-plugin-solid": "2.11.14"
